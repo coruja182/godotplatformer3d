@@ -1,16 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3smp0jwqt4xu"]
+[gd_scene load_steps=6 format=3 uid="uid://c3smp0jwqt4xu"]
 
 [ext_resource type="PackedScene" uid="uid://dxuhx1conbbsd" path="res://platforms/platform_large.tscn" id="1_74ayk"]
 [ext_resource type="ArrayMesh" uid="uid://gjuyfsvj5gs0" path="res://assets/models/characterVampire.obj" id="2_lx8m8"]
 [ext_resource type="Script" path="res://player/player.gd" id="2_qm4g6"]
+[ext_resource type="PackedScene" uid="uid://cpjkntrgxwwm" path="res://enemies/enemy_spike.tscn" id="4_teu1i"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xm3rs"]
 radius = 0.3
 height = 1.2
 
 [node name="Main" type="Node3D"]
-
-[node name="PlatformLarge" parent="." instance=ExtResource("1_74ayk")]
 
 [node name="Player" type="CharacterBody3D" parent="."]
 script = ExtResource("2_qm4g6")
@@ -32,3 +31,39 @@ fov = 60.0
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.770474, -0.512448, 0.379167, 0.253147, 0.791844, 0.555787, -0.585053, -0.332235, 0.73982, 0, 3.04572, 0)
 shadow_enabled = true
+
+[node name="Platforms" type="Node3D" parent="."]
+
+[node name="PlatformLarge" parent="Platforms" instance=ExtResource("1_74ayk")]
+metadata/_edit_lock_ = true
+
+[node name="PlatformLarge2" parent="Platforms" instance=ExtResource("1_74ayk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0490875, -1, 4.12595)
+
+[node name="PlatformLarge3" parent="Platforms" instance=ExtResource("1_74ayk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.33806, -1, 0.588443)
+
+[node name="PlatformLarge4" parent="Platforms" instance=ExtResource("1_74ayk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.49538, -1, -3.57582)
+
+[node name="PlatformLarge5" parent="Platforms" instance=ExtResource("1_74ayk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.49538, -1, -5.55569)
+
+[node name="PlatformLarge6" parent="Platforms" instance=ExtResource("1_74ayk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.49538, -1, -7.54374)
+
+[node name="PlatformLarge7" parent="Platforms" instance=ExtResource("1_74ayk")]
+transform = Transform3D(0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0, 1, -1.16733, -0.392639, -7.54374)
+
+[node name="PlatformLarge8" parent="Platforms" instance=ExtResource("1_74ayk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22095, -0.0378431, -7.54538)
+
+[node name="PlatformLarge9" parent="Platforms" instance=ExtResource("1_74ayk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.19899, -0.0378431, -7.54538)
+
+[node name="PlatformLarge10" parent="Platforms" instance=ExtResource("1_74ayk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.16583, -0.0378431, -7.54538)
+
+[node name="EnemySpike" parent="." instance=ExtResource("4_teu1i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.812, -0.453715, 0.454148)
+move_direction = Vector3(0, 3, 0)
