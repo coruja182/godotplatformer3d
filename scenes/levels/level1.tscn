@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://c3smp0jwqt4xu"]
+[gd_scene load_steps=7 format=3 uid="uid://c3smp0jwqt4xu"]
 
 [ext_resource type="PackedScene" uid="uid://dxuhx1conbbsd" path="res://platforms/platform_large.tscn" id="1_74ayk"]
 [ext_resource type="ArrayMesh" uid="uid://gjuyfsvj5gs0" path="res://assets/models/characterVampire.obj" id="2_lx8m8"]
 [ext_resource type="Script" path="res://player/player.gd" id="2_qm4g6"]
 [ext_resource type="PackedScene" uid="uid://cpjkntrgxwwm" path="res://enemies/enemy_spike.tscn" id="4_teu1i"]
+[ext_resource type="PackedScene" uid="uid://k70g3pu1up24" path="res://spikes/spikes.tscn" id="5_1q6w5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xm3rs"]
 radius = 0.3
@@ -77,3 +78,6 @@ move_direction = Vector3(0, 3, 0)
 [node name="EnemySpike3" parent="Enemies" instance=ExtResource("4_teu1i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00126982, -0.453715, 1.915)
 move_direction = Vector3(0, 3, 0)
+
+[node name="Spikes" parent="." instance=ExtResource("5_1q6w5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.78413, 0, 0.648084)
