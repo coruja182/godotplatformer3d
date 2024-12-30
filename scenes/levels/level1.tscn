@@ -1,21 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://c3smp0jwqt4xu"]
+[gd_scene load_steps=8 format=3 uid="uid://c3smp0jwqt4xu"]
 
-[ext_resource type="PackedScene" uid="uid://dxuhx1conbbsd" path="res://platforms/platform_large.tscn" id="1_74ayk"]
-[ext_resource type="ArrayMesh" uid="uid://gjuyfsvj5gs0" path="res://assets/models/characterVampire.obj" id="2_lx8m8"]
-[ext_resource type="Script" path="res://player/player.gd" id="2_qm4g6"]
-[ext_resource type="PackedScene" uid="uid://cpjkntrgxwwm" path="res://enemies/enemy_spike.tscn" id="4_teu1i"]
-[ext_resource type="PackedScene" uid="uid://k70g3pu1up24" path="res://spikes/spikes.tscn" id="5_1q6w5"]
-[ext_resource type="PackedScene" uid="uid://pv0r3h0luha2" path="res://coin/coin.tscn" id="6_wdk87"]
-[ext_resource type="PackedScene" uid="uid://17wsajd8txhx" path="res://end_flag/end_flag.tscn" id="7_yj1qt"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xm3rs"]
-radius = 0.3
-height = 1.2
-
-[sub_resource type="LabelSettings" id="LabelSettings_mf1c7"]
-font_size = 50
-outline_size = 5
-outline_color = Color(0, 0, 0, 1)
+[ext_resource type="PackedScene" uid="uid://dxuhx1conbbsd" path="res://scenes/platforms/platform_large.tscn" id="1_74ayk"]
+[ext_resource type="PackedScene" uid="uid://c6ypbg2cfu5dw" path="res://scenes/player/player.tscn" id="1_jt80q"]
+[ext_resource type="PackedScene" uid="uid://cpjkntrgxwwm" path="res://scenes/enemies/enemy_spike.tscn" id="4_teu1i"]
+[ext_resource type="PackedScene" uid="uid://k70g3pu1up24" path="res://scenes/spikes/spikes.tscn" id="5_1q6w5"]
+[ext_resource type="PackedScene" uid="uid://pv0r3h0luha2" path="res://scenes/coin/coin.tscn" id="6_wdk87"]
+[ext_resource type="PackedScene" uid="uid://17wsajd8txhx" path="res://scenes/end_flag/end_flag.tscn" id="7_yj1qt"]
 
 [sub_resource type="Environment" id="Environment_yse03"]
 background_mode = 1
@@ -23,30 +13,7 @@ background_color = Color(0.4788, 0.67144, 0.84, 1)
 
 [node name="Main" type="Node3D"]
 
-[node name="Player" type="CharacterBody3D" parent="." groups=["Player"]]
-script = ExtResource("2_qm4g6")
-
-[node name="Model" type="MeshInstance3D" parent="Player"]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
-mesh = ExtResource("2_lx8m8")
-skeleton = NodePath("../..")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.601839, 0)
-shape = SubResource("CapsuleShape3D_xm3rs")
-
-[node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 2.70392, 4.18294)
-current = true
-fov = 60.0
-
-[node name="ScoreText" type="Label" parent="Player"]
-offset_left = 13.0
-offset_top = 11.0
-offset_right = 53.0
-offset_bottom = 34.0
-text = "Score: 0"
-label_settings = SubResource("LabelSettings_mf1c7")
+[node name="Player" parent="." instance=ExtResource("1_jt80q")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.770474, -0.512448, 0.379167, 0.253147, 0.791844, 0.555787, -0.585053, -0.332235, 0.73982, 0, 3.04572, 0)
@@ -123,4 +90,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.86904, 1.56877, -7.48846)
 
 [node name="EndFlag" parent="." instance=ExtResource("7_yj1qt")]
 transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 4.53635, 0.962644, -7.503)
-next_scene = "res://scenes/levels/level1.tscn"
+next_scene = "res://scenes/levels/level2.tscn"

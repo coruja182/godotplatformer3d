@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://17wsajd8txhx"]
 
-[ext_resource type="Script" path="res://end_flag/end_flag.gd" id="1_8ja2d"]
+[ext_resource type="Script" path="res://scenes/end_flag/end_flag.gd" id="1_8ja2d"]
 [ext_resource type="ArrayMesh" uid="uid://cx3dwltkgs56g" path="res://assets/models/flag.obj" id="1_gpk22"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wlyqf"]

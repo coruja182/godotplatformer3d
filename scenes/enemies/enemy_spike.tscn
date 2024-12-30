@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cpjkntrgxwwm"]
 
-[ext_resource type="Script" path="res://enemies/enemy_spike.gd" id="1_cqdbq"]
+[ext_resource type="Script" path="res://scenes/enemies/enemy_spike.gd" id="1_cqdbq"]
 [ext_resource type="ArrayMesh" uid="uid://mvd3ie23bw83" path="res://assets/models/spikeBlock.obj" id="1_gbgtg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_86b5l"]
