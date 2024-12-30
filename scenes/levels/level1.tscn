@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c3smp0jwqt4xu"]
+[gd_scene load_steps=10 format=3 uid="uid://c3smp0jwqt4xu"]
 
 [ext_resource type="PackedScene" uid="uid://dxuhx1conbbsd" path="res://platforms/platform_large.tscn" id="1_74ayk"]
 [ext_resource type="ArrayMesh" uid="uid://gjuyfsvj5gs0" path="res://assets/models/characterVampire.obj" id="2_lx8m8"]
@@ -10,6 +10,11 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xm3rs"]
 radius = 0.3
 height = 1.2
+
+[sub_resource type="LabelSettings" id="LabelSettings_mf1c7"]
+font_size = 50
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Environment" id="Environment_yse03"]
 background_mode = 1
@@ -33,6 +38,14 @@ shape = SubResource("CapsuleShape3D_xm3rs")
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 2.70392, 4.18294)
 current = true
 fov = 60.0
+
+[node name="ScoreText" type="Label" parent="Player"]
+offset_left = 13.0
+offset_top = 11.0
+offset_right = 53.0
+offset_bottom = 34.0
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_mf1c7")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.770474, -0.512448, 0.379167, 0.253147, 0.791844, 0.555787, -0.585053, -0.332235, 0.73982, 0, 3.04572, 0)
@@ -87,8 +100,22 @@ move_direction = Vector3(0, 3, 0)
 [node name="Spikes" parent="." instance=ExtResource("5_1q6w5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.78413, 0, 0.648084)
 
-[node name="Coin" parent="." instance=ExtResource("6_wdk87")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.73768, 0.499711, 0.842271)
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_yse03")
+
+[node name="Collectibles" type="Node3D" parent="."]
+
+[node name="Coin" parent="Collectibles" instance=ExtResource("6_wdk87")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.73768, 0.499711, 0.565595)
+
+[node name="Coin2" parent="Collectibles" instance=ExtResource("6_wdk87")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00500512, 1.44664, 1.9053)
+
+[node name="Coin3" parent="Collectibles" instance=ExtResource("6_wdk87")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00500512, 0.499711, 4.35554)
+
+[node name="Coin4" parent="Collectibles" instance=ExtResource("6_wdk87")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.42034, 0.499711, -6.6998)
+
+[node name="Coin5" parent="Collectibles" instance=ExtResource("6_wdk87")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.86904, 1.56877, -7.48846)
