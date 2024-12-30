@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c3smp0jwqt4xu"]
+[gd_scene load_steps=11 format=3 uid="uid://c3smp0jwqt4xu"]
 
 [ext_resource type="PackedScene" uid="uid://dxuhx1conbbsd" path="res://platforms/platform_large.tscn" id="1_74ayk"]
 [ext_resource type="ArrayMesh" uid="uid://gjuyfsvj5gs0" path="res://assets/models/characterVampire.obj" id="2_lx8m8"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cpjkntrgxwwm" path="res://enemies/enemy_spike.tscn" id="4_teu1i"]
 [ext_resource type="PackedScene" uid="uid://k70g3pu1up24" path="res://spikes/spikes.tscn" id="5_1q6w5"]
 [ext_resource type="PackedScene" uid="uid://pv0r3h0luha2" path="res://coin/coin.tscn" id="6_wdk87"]
+[ext_resource type="PackedScene" uid="uid://17wsajd8txhx" path="res://end_flag/end_flag.tscn" id="7_yj1qt"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xm3rs"]
 radius = 0.3
@@ -119,3 +120,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.42034, 0.499711, -6.6998)
 
 [node name="Coin5" parent="Collectibles" instance=ExtResource("6_wdk87")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.86904, 1.56877, -7.48846)
+
+[node name="EndFlag" parent="." instance=ExtResource("7_yj1qt")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 4.53635, 0.962644, -7.503)
+next_scene = "res://scenes/levels/level1.tscn"
