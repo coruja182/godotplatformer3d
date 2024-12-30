@@ -11,7 +11,7 @@ height = 1.2
 
 [node name="Main" type="Node3D"]
 
-[node name="Player" type="CharacterBody3D" parent="."]
+[node name="Player" type="CharacterBody3D" parent="." groups=["Player"]]
 script = ExtResource("2_qm4g6")
 
 [node name="Model" type="MeshInstance3D" parent="Player"]
@@ -64,6 +64,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.19899, -0.0378431, -7.54538
 [node name="PlatformLarge10" parent="Platforms" instance=ExtResource("1_74ayk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.16583, -0.0378431, -7.54538)
 
-[node name="EnemySpike" parent="." instance=ExtResource("4_teu1i")]
+[node name="Enemies" type="Node3D" parent="."]
+
+[node name="EnemySpike" parent="Enemies" instance=ExtResource("4_teu1i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.812, -0.453715, 0.454148)
+move_direction = Vector3(0, 3, 0)
+
+[node name="EnemySpike2" parent="Enemies" instance=ExtResource("4_teu1i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.45044, -0.453715, -1.47207)
+move_direction = Vector3(0, 3, 0)
+
+[node name="EnemySpike3" parent="Enemies" instance=ExtResource("4_teu1i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00126982, -0.453715, 1.915)
 move_direction = Vector3(0, 3, 0)
